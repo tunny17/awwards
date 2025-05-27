@@ -15,7 +15,23 @@ const Hero = () => {
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [loadedVideos, setLoadedVideos] = useState<number>(0);
 
-  const totalVideos = 4;
+  const totalVideos = 2;
+  const skills = [
+    'Reactjs',
+    'React Native',
+    'Nextjs',
+    'Sveltekit',
+    'TypeScript',
+    'NodeJs',
+    'Express',
+    'Deno',
+    'MongoDB',
+    'PostgreSQL',
+    'MySQL',
+    'Tailwind CSS',
+    'Chakra UI',
+    'Material UI'
+  ];
 
   const nextVideoRef = useRef<HTMLVideoElement>(null);
   const upcomingVideoIndex = (currentIndex % totalVideos) + 1;
@@ -84,7 +100,7 @@ const Hero = () => {
     setLoadedVideos((prev) => prev + 1);
   };
 
-  const getVideoSrc = (index: number) => `videos/hero-${index}.mp4`;
+  const getVideoSrc = (index: number) => `videos/hero-bg-${index}.mp4`;
 
   return (
     <div className="relative h-dvh w-screen overflow-x-hidden">
@@ -140,32 +156,42 @@ const Hero = () => {
           />
         </div>
 
-        <h1 className="special-font hero-heading absolute bottom-5 right-5 z-40 text-blue-75">
-          G<b>A</b>MING
+        <h1 className="special-font hero-heading tracking-wider absolute bottom-5 right-5 z-40 text-blue-75">
+          <b>E</b>NGIN<b>EE</b>R
         </h1>
 
         <div className="absolute left-0 top-0 z-40 size-full">
           <div className="mt-24 px-5 sm:px-10">
-            <h1 className="special-font hero-heading text-blue-100">
-              redefi<b>n</b>e
+            <h1 className="special-font hero-heading tracking-wider text-blue-100">
+              FRONT<b>E</b>N<b>D</b>
             </h1>
 
-            <p className="mb-5 max-w-64 font-robert-regular text-blue-100">
-              Enter the Metagame Layer <br /> Unleash the Play Economy
+            <p className="mb-5 mt-10 text-blue-100 leading-8 lg:max-w-[70%] mx-auto text-center lg:text-lg sm:text-sm">
+              I'm an experienced and results-driven Frontend Developer with over 4 years of
+              experience building responsive, scalable, and high-performance web applications using
+              modern frontend technologies such as React.js, Next.js, TypeScript, Tailwind CSS, and
+              SvelteKit. Adept at translating UI/UX designs into clean, efficient code, optimizing
+              performance, and delivering cross-browser, mobile-first experiences. Strong background
+              in RESTful APIs, state management (Redux, Context API), and integrating AI and Web3
+              features. Proven success working in Agile/Scrum teams and contributing to open-source
+              and startup environments..
             </p>
 
             <Button
               id="watch-trailer"
-              title="Watch trailer"
+              title="Contact Me"
               leftIcon={<TiLocationArrow />}
-              containerClass="bg-yellow-300 flex-center gap-1"
+              handleClick={() => {
+                window.location.href = 'mailto:tvnji01@gmail.com';
+              }}
+              containerClass="bg-yellow-300 flex-center gap-1 mx-auto"
             />
           </div>
         </div>
       </div>
 
-      <h1 className="special-font hero-heading absolute bottom-5 right-5 text-black">
-        G<b>A</b>MING
+      <h1 className="special-font hero-heading tracking-wider absolute bottom-5 right-5 text-black">
+        <b>E</b>NGIN<b>EE</b>R
       </h1>
     </div>
   );
