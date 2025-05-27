@@ -1,7 +1,15 @@
 import gsap from 'gsap';
 import { useEffect, useRef } from 'react';
 
-const AnimatedTitle = ({ title, containerClass }: { title: string; containerClass: string }) => {
+const AnimatedTitle = ({
+  title,
+  containerClass,
+  sectionId
+}: {
+  title: string;
+  containerClass: string;
+  sectionId?: string;
+}) => {
   const containerRef = useRef(null);
 
   useEffect(() => {
@@ -28,7 +36,7 @@ const AnimatedTitle = ({ title, containerClass }: { title: string; containerClas
   }, []);
 
   return (
-    <div ref={containerRef} className={`${containerClass} animated-title`}>
+    <div id={sectionId} ref={containerRef} className={`${containerClass} animated-title`}>
       {title.split('<br />').map((line, index) => (
         <div key={index} className="flex-center max-w-full flex-wrap gap-2 px-10 md:gap-3">
           {line.split(' ').map((word, i) => (
